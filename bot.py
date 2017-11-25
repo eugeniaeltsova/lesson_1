@@ -11,13 +11,23 @@ def greet_user (bot, update):
     update.message.reply_text(text)
 
 def talk_to_me (bot, update):
-    user_text = update.message.text
+    user_text = update.message.text # то, что ввел пользователь
     logging.info (user_text)
     update.message.reply_text(user_text)
+
+
+def word_count(bot, update):
+    phrase = update.message.text
+    words_list = phrase.split(" ")
+    update.message.reply_text("Number of words is " + str(len(words_list)))
+
+    # return print ("Number of words is " + str(len(words_list)))
+
 def main ():
     updater = Updater ("453979828:AAH8NOKrg5FnVjQnYbpb2ZAmZined84Agp0")
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", greet_user))
+    dp.add_handler(CommandHandler("wordcount", word_count))
     dp.add_handler (MessageHandler(Filters.text, talk_to_me))
 
     updater.start_polling()

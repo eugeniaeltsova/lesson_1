@@ -1,2 +1,2 @@
 name = "Jenny"
-print (name)
+print (name
