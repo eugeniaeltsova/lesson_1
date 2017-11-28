@@ -1,0 +1,38 @@
+root - INFO - fgdsg dfgkljfldsj
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
+root - INFO - lkfj lkfdjlskdaj sdf
+telegram.ext.updater - ERROR - Error while getting Updates: Timed out
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python35\lib\site-packages\telegram\ext\dispatcher.py", line 270, in process_update
+    handler.handle_update(update, self)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python35\lib\site-packages\telegram\ext\commandhandler.py", line 171, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 37, in calc
+    summ = int(equation_data[0]) + int(equation_data[1])
+ValueError: invalid literal for int() with base 10: ''
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python35\lib\site-packages\telegram\ext\dispatcher.py", line 270, in process_update
+    handler.handle_update(update, self)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python35\lib\site-packages\telegram\ext\commandhandler.py", line 171, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 38, in calc
+    update.message.reply_text("сумма  равняется " + summ)
+TypeError: Can't convert 'int' object to str implicitly
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - ERROR - Error while getting Updates: Timed out
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python35\lib\site-packages\telegram\ext\dispatcher.py", line 270, in process_update
+    handler.handle_update(update, self)
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python35\lib\site-packages\telegram\ext\commandhandler.py", line 171, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 39, in calc
+    update.message.reply_text("сумма  равняется " + summ)
+TypeError: Can't convert 'int' object to str implicitly
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
