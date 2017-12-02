@@ -24,6 +24,24 @@ def word_count(bot, update):
     if len(words_list) - 1 == 0:
         update.message.reply_text("ну скажи что-нибудь")
 
+def planet(bot, update):
+    """update.message.reply_text("Enter the name of the planet in English, please")"""
+    planet = update.message.text[8 :]
+    import ephem
+    import datetime
+
+    date = datetime.datetime.now()
+    date = date.strftime("%Y/%m/%d")
+    astronomy = {"Mars" : ephem.Mars, "Venus" : ephem.Venus, "Jupiter" : ephem.Jupiter, "Mercury" : ephem.Mercury, "Saturn" : ephem.Saturn, 
+ "Neptune" : ephem.Neptune, "Uranus" : ephem.Uranus}
+
+
+   
+    constellation = str(ephem.constellation(astronomy.get(planet, ephem.Neptune)(date)))
+    update.message.reply_text(planet + " is in the " + constellation [7 : len(constellation)-1] + " constellation.")
+
+
+
 def calc(bot, update):
     equation = update.message.text[6:]
 
@@ -65,6 +83,7 @@ def main ():
     dp.add_handler(CommandHandler("wordcount", word_count))
     dp.add_handler(CommandHandler("calc", calc))
     dp.add_handler (MessageHandler(Filters.text, talk_to_me))
+    dp.add_handler(CommandHandler("planet", planet))
 
     updater.start_polling()
     updater.idle()
